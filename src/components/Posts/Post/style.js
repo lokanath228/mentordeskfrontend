@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles'
 
 export default makeStyles({
   media: {
@@ -12,13 +12,12 @@ export default makeStyles({
   },
   fullHeightCard: {
     height: '100%',
-    margin:10
   },
   card: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    borderRadius: '15px',
+    borderRadius: '0px',
     height: '100%',
     position: 'relative',
   },
@@ -50,4 +49,4 @@ export default makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
-});
+})
