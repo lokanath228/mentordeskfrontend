@@ -11,6 +11,9 @@ const Form = ({ currentId, setCurrentId }) => {
     message: '',
     tags: '',
     selectedFile: '',
+    fruits: '',
+    vegetable: '',
+    meat: '',
   })
   const post = useSelector((state) =>
     currentId ? state.posts.find((message) => message._id === currentId) : null
@@ -42,6 +45,9 @@ const Form = ({ currentId, setCurrentId }) => {
       message: '',
       tags: '',
       selectedFile: '',
+      fruits: '',
+      vegetable: '',
+      meat: '',
     })
   }
 
@@ -58,14 +64,14 @@ const Form = ({ currentId, setCurrentId }) => {
             {' '}
             {currentId ? 'Editing' : 'Creating'}{' '}
           </span>{' '}
-          a student detail
+          a PROFILE detail
         </Typography>
         <Grid container spacing={2}>
           <Grid item xs={4} sm={4}>
             <TextField
               name='creator'
               variant='outlined'
-              label='roll no'
+              label='FULLNAME'
               fullWidth
               value={postData.creator}
               onChange={(e) =>
@@ -77,7 +83,7 @@ const Form = ({ currentId, setCurrentId }) => {
             <TextField
               name='title'
               variant='outlined'
-              label='student name'
+              label=' EMAIL ID'
               fullWidth
               value={postData.title}
               onChange={(e) =>
@@ -89,7 +95,7 @@ const Form = ({ currentId, setCurrentId }) => {
             <TextField
               name='tags'
               variant='outlined'
-              label='batch '
+              label=' PHONE NUMBER '
               fullWidth
               value={postData.tags}
               onChange={(e) =>
@@ -97,11 +103,11 @@ const Form = ({ currentId, setCurrentId }) => {
               }
             />
           </Grid>
-          <Grid item xs={12} sm={12}>
+          <Grid item xs={6} sm={6}>
             <TextField
               name='message'
               variant='outlined'
-              label='skills'
+              label=' Job Type & prefer Location '
               fullWidth
               multiline
               rows={4}
@@ -111,8 +117,7 @@ const Form = ({ currentId, setCurrentId }) => {
               }
             />
           </Grid>
-
-          <Grid item>
+          <Grid item xs={12} sm={6}>
             <div className={classes.fileInput}>
               <FileBase
                 type='file'
@@ -123,9 +128,47 @@ const Form = ({ currentId, setCurrentId }) => {
               />
             </div>
           </Grid>
+
+          <Grid item xs={4} sm={4}>
+            <TextField
+              name='fruits'
+              variant='outlined'
+              label='DOB'
+              fullWidth
+              value={postData.fruits}
+              onChange={(e) =>
+                setPostData({ ...postData, fruits: e.target.value })
+              }
+            />
+          </Grid>
+          {/* <Grid item xs={4} sm={4}>
+            <TextField
+              name='vegetable'
+              variant='outlined'
+              label='PREFER LOCATION '
+              fullWidth
+              value={postData.vegetable}
+              onChange={(e) =>
+                setPostData({ ...postData, vegetable: e.target.value })
+              }
+            />
+          </Grid> */}
+          {/* <Grid item xs={12} sm={12}>
+            <TextField
+              name='meat'
+              variant='outlined'
+              label='JOB TYPE - PT/FT'
+              fullWidth
+              multiline
+              value={postData.meat}
+              onChange={(e) =>
+                setPostData({ ...postData, meat: e.target.value })
+              }
+            />
+          </Grid> */}
         </Grid>
         <Grid container spacing={2}>
-          <Grid item xs={6} sm={6}></Grid>
+          <Grid item xs={2} sm={2}></Grid>
           <Grid item xs={2} sm={2}></Grid>
           <Grid item xs={2} sm={2}>
             <Button
@@ -136,7 +179,7 @@ const Form = ({ currentId, setCurrentId }) => {
               type='submit'
               fullWidth
             >
-              Submit
+              +Add/Update
             </Button>
           </Grid>
           <Grid item xs={2} sm={2}>

@@ -34,6 +34,12 @@ export default makeStyles({
     right: '20px',
     color: 'white',
   },
+  overlay3: {
+    position: 'absolute',
+    top: '40px',
+    right: '55px',
+    color: 'white',
+  },
   grid: {
     display: 'flex',
   },
@@ -45,9 +51,18 @@ export default makeStyles({
   title: {
     padding: '0 16px',
   },
+  fruits: {
+    padding: '1px 30px',
+    color: 'white',
+  },
   cardActions: {
     padding: '0 16px 8px 16px',
     display: 'flex',
     justifyContent: 'space-between',
   },
+  // fruits: {
+  //   display: 'flex',
+  //   justifyContent: 'space-between',
+  //   color: 'black',
+  // },
 })
